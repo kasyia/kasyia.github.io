@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,300&display=swap');
+
+body {
+
+    cursor: url(asset/logo.png) 20 20, auto;
+
+
+    font-family: 'Ubuntu', sans-serif;
+    width: 100vw;
+    height: 100vw;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+
+
+    
+    
+    background-image: url(asset/iswear.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 91%;
+    max-width: 680px;
+    margin: 10px;
+    padding: 50px 0px 100px 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.img-container img {
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 100px;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 50px 0px 0px;
+
+    color: #f17fb5;
+}
+
+.link-item {
+    width: 100%;
+    height: 56px;
+    margin: 16px;
+    border-radius: 20px;
+    
+    color: #b67cb8;
+    text-decoration: none;
+    background-color: #CF9ED1;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    margin: 3px 8px;
+    width: 44px;
+    height: 44px;
+}
+
+.link-item {
+    margin-right: 60px;
+}
+
+.link-item:hover{
+    transition: cubic-bezier(.07, 1.41, .82, 1.41) 0.2s;
+    transform: scale(1.02);
+
+    background-color: #b67cb8;
+    color: #CF9ED1;
+}
+
+
+
+.img-container:hover img {
+    transition: cubic-bezier(.07, 1.41, .82, 1.41) 0.2s;
+    transform: scale(1.25);
+    content: url(asset/kanatak.jpeg); /* Ganti gambar saat hover */
+}
+
+
+/* CSS untuk karakter animasi */
+.img-container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: bounce 2s infinite; /* Animasi karakter */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Karakter melompat ke atas */
+    }
+}
+
+
+.bubble{
+    position: relative;
+    display: flex;
+}
+
+.bubble span{
+    position: cover;
+    width: 30px;
+    height: 30px;
+    background: #c96dc9;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #db7bdb, 0 0 50px #c03dc0, 0 0 100px #c03dc0;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubble span:nth-child(even){
+    background: #f17fb5;
+    box-shadow: 0 0 0 10px #f197c1, 0 0 50px #e270a5, 0 0 100px #ee2784;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website dengan Gambar dan Audio Berganti</title>
+</head>
+<body>
+    <div id="background-container">
+        <img id="background-image" src="asset/bgbutterfly.png" alt="Latar Belakang Default">
+    </div>
+    <div id="content-container">
+        <img id="image" src="asset/butterfly.jfif" alt="Gambar Default">
+        <audio id="audio" autoplay controls>
+            <source src="asset/Butterfly.mp3" type="audio/mp3">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+        <button id="change-button">Ganti Gambar dan Audio</button>
+    </div>
+    <script>
+        // Daftar latar belakang, gambar, dan lagu yang dapat diubah
+const backgrounds = ["asset/dark.png", "asset/iswear.png", "asset/bgbutterfly.png"];
+const images = ["asset/silentblaze2.jpeg", "asset/kanatakonoe.png", "asset/butterfly.jfif"];
+const songs = ["silentblaze.mp3", "song.mp3", "Butterfly.mp3"];
+
+let currentIndex = 0;
+
+const background = document.getElementById("background-image");
+const image = document.getElementById("image");
+const audio = document.getElementById("audio");
+const changeButton = document.getElementById("change-button");
+
+// Fungsi untuk mengganti latar belakang, gambar, dan audio
+function changeBackgroundImageAndContent() {
+    currentIndex = (currentIndex + 1) % backgrounds.length;
+    background.src = backgrounds[currentIndex];
+    image.src = images[currentIndex];
+    audio.src = songs[currentIndex];
+}
+
+// Tambahkan event listener ke tombol untuk mengganti latar belakang, gambar, dan audio
+changeButton.addEventListener("click", changeBackgroundImageAndContent);
+
+// Panggil fungsi pertama kali untuk menampilkan latar belakang, gambar, dan audio awal
+changeBackgroundImageAndContent();
+
+    </script>
+</body>
+</html>
